@@ -45,7 +45,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: pkill -f 12035
+        script: pkill -f 20035
     - name: start flask app
       uses: appleboy/ssh-action@v0.1.8
       with:
@@ -53,4 +53,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: cd /home/rplcicd/10120035 && screen -dmS flask-12035 python3 -m flask run --host=0.0.0.0 --port=12035 && ps -ef | grep 12035
+        script: cd /home/rplcicd/10120035 && screen -dmS flask-20035 python3 -m flask run --host=0.0.0.0 --port=20035 && ps -ef | grep 20035
