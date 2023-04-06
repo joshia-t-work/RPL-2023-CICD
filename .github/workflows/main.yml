@@ -27,7 +27,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: mkdir -p /home/rplcicd/13512043 
+        script: mkdir -p /home/rplcicd/10120035 
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
       with:
@@ -45,7 +45,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: pkill -f 12043
+        script: pkill -f 12035
     - name: start flask app
       uses: appleboy/ssh-action@v0.1.8
       with:
@@ -53,4 +53,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: cd /home/rplcicd/13512043 && screen -dmS flask-12043 python3 -m flask run --host=0.0.0.0 --port=12043 && ps -ef | grep 12043
+        script: cd /home/rplcicd/10120035 && screen -dmS flask-12035 python3 -m flask run --host=0.0.0.0 --port=12035 && ps -ef | grep 12035
